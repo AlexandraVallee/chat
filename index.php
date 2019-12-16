@@ -22,7 +22,7 @@ if(isset($_GET['page'])){
 $FirstEnt=intval(($pageAct-1)*$message_par_page);
 
 
-$req = "SELECT `ID`,`DATE`,`ID_USER`,`MESSAGE` FROM `mess` ORDER BY `DATE` DESC LIMIT {$FirstEnt},{$message_par_page}";
+$req = "SELECT `ID`,`DATE`,`ID_USER`,`MESSAGE` FROM `mess` ORDER BY `DATE` ASC LIMIT {$FirstEnt},{$message_par_page}";
 $res = $GLOBALS['db']->query($req);
 ?>
 
@@ -48,12 +48,12 @@ $res = $GLOBALS['db']->query($req);
 
 <?php
 	}
-
+if(isset($_SESSION["login"])){
 require_once("creaArticle.php");
-
-echo '<p align="center">Page : ';
+}
+echo '<main><p align="center">Page : ';
 for($i=1; $i<=$nbrPage; $i++){
- 
+
     if($i==$pageAct){
     	 echo " [ $i ] ";
     }else{

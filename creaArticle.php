@@ -1,17 +1,15 @@
 <?php
+
 require_once("bd_connect.php");
 require_once("function.php");
-session_start();
-if (isset($_POST['sub'])) {
-	$_SESSION["nom"] = $_POST['auteur'];
-}
+
 
 
 
 if (isset($_POST['sub'])) {
 	//Déclare les vars
 	$form_valid = TRUE;
-	$form_auteur = $_POST['auteur'];
+	$form_auteur = $_SESSION["login"];
 	$form_txt = $_POST['message'];
 	
 	//Assainir: XSS, injection SQL 
@@ -32,20 +30,6 @@ if (isset($_POST['sub'])) {
 	
 	if ($form_valid) {
 		/* VERIFICATION AVEC BDD */
-		$log1 = $_POST['auteur'];
-   		$req = "SELECT NAME FROM user WHERE NAME ="."'".$log1."'";
-   		$res = $GLOBALS['db']->query($req);
-   		$pseudoFree=($res->num_rows);
-   		
-   		if ($pseudoFree != 0) {
-   			echo '<p class="echo_err">Votre pseudo est déjà utilisé </p>';
-   			echo "<br>";
-   			$eGlobal = true;
-   		} else{
-   			$log1 = $_POST['auteur'];
-   			$req = "INSERT INTO `user` (`ID`, `NAME`) VALUES (NULL,"."'".$form_auteur."')";
-   			$res = $GLOBALS['db']->query($req);
-   		}
 		
 		/* FIN VERIFICATIONS, AJOUT */
 		if ($form_valid) {
@@ -70,7 +54,7 @@ if (isset($_POST['sub'])) {
 	
 
 	<form action ="" method="post">
-		<input name="auteur" placeholder="Entrez votre nom" required><?php $_SESSION["nom"]; ?></input>
+		
 		<textarea  name="message" required>Contenu de l'article ici</textarea>
 
 		<input type="submit" value="valider" name="bouton">

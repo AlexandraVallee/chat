@@ -82,7 +82,7 @@ div.baniere>form>button{
 }*/
 
 /*nav*/
-/*header>nav{
+header>nav{
 	display: grid;
 	grid-column: 1;
 	grid-row: 2;
@@ -91,7 +91,7 @@ div.baniere>form>button{
 }
 header>nav>ul{
 	display: grid;
-	grid-template-columns: .8fr repeat(4, 1fr);
+	grid-template-columns: .8fr repeat(3, 1fr);
 	grid-template-rows: 1fr ;
 	color: #061539;	
 }
@@ -142,11 +142,6 @@ div.menu>nav>ul>li:nth-child(0n+4){
 	grid-column: 4;
 	grid-row: 1;
 }
-div.menu>nav>ul>li:nth-child(0n+5){
-	display: grid;
-	grid-column: 5;
-	grid-row: 1;
-}
 div.menu>nav>ul>li>a{
 	display: grid;
 	grid-template-columns: 1fr ;
@@ -161,7 +156,7 @@ div.menu>nav>ul>li>a>p{
 	display: grid;
 	grid-column: 1;
 	grid-row: 2;
-}*/
+}
 /*FIN HEADER*/
 
 /*MAIN*/
@@ -170,7 +165,7 @@ main{
 	grid-column: 1/13;
 	grid-row :3/12;	
 	grid-template-columns: 1fr;
-	grid-template-rows: 2fr;
+	grid-template-rows: 3fr;
 }
 
 /*article*/
@@ -331,6 +326,12 @@ main>div>article>footer>time{
 	grid-row: 1;
 	align-items: center;
 	justify-items: right;
+}
+
+body>main>p{
+	display: grid;
+	grid-column: 1;
+	grid-row: 3;
 }
 
 /*FOOTER*/
