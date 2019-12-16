@@ -4,6 +4,7 @@
 ?>
 
 <?php
+
 session_unset();
 session_destroy();
 echo "vous êtes bien déconecté";  

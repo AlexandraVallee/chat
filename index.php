@@ -1,7 +1,8 @@
 <?php
+
 require_once("bd_connect.php");
 
-$message_par_page = 3;
+$message_par_page = 4;
 
 $reqTt = 'SELECT COUNT(*) AS total FROM mess';
 $resTt = $GLOBALS['db']->query($reqTt); 
@@ -32,10 +33,12 @@ $res = $GLOBALS['db']->query($req);
 
 <?php
 	while ($row = $res->fetch_assoc()) {
+		$user=$row['ID_USER'];
+		$monURL = "pageMembre.php?id=".$user;
 ?>
 
 			<article data-id="<?php echo $row['ID']; ?>">
-				<header><h2><?php echo $row['ID_USER']; ?></h2>
+				<header><h2><a href=<?= $monURL ?>><?php echo $user; ?></a></h2>
 				</header>
 				<main><?php echo nl2br($row['MESSAGE']); ?></main>
 				<footer>
@@ -48,10 +51,11 @@ $res = $GLOBALS['db']->query($req);
 
 <?php
 	}
-if(isset($_SESSION["login"])){
+
+
 require_once("creaArticle.php");
-}
-echo '<main><p align="center">Page : ';
+
+echo '<p align="center">Page : ';
 for($i=1; $i<=$nbrPage; $i++){
 
     if($i==$pageAct){

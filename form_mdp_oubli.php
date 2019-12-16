@@ -1,4 +1,5 @@
 <?php
+
 require_once("bd_connect.php");
 require_once("function.php");
 

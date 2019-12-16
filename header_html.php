@@ -14,7 +14,7 @@
 		<div class="baniere">
 			<p class="icon icon-bubbles4"></p>
 			<p class="txt"><?php
-			session_start(); 
+			session_start();
 			if(isset($_SESSION["login"])) {
 				echo"Bienvenue ".$_SESSION["login"];
 			}else{

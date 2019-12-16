@@ -27,7 +27,6 @@ if (isset($_POST["sub"])){ //test si le formulaire est envoyé
 				
 				
 				$_SESSION["login"] = $ligne_resultat['LOGIN'];
-				echo $_SESSION["login"];
 				$_SESSION["id"] = $ligne_resultat['ID'];
 
 				//echo $_SESSION["login"]; 3 test débug
@@ -53,10 +52,10 @@ if (isset($_POST["sub"])){ //test si le formulaire est envoyé
 	}
 }
 ?>
-
 <?php
 	require_once("header_html.php");
 ?>
+
 
 	<GLOBALS['db'] href="css/style_form.css" rel="stylesheet">
 	<h2> Connexion </h2>

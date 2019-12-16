@@ -55,14 +55,14 @@ if (isset($_POST['sub'])) {
 
 	<form action ="" method="post">
 		
-		<textarea  name="message" required>Contenu de l'article ici</textarea>
+		<textarea  name="message" required>Votre message ici</textarea>
 
 		<input type="submit" value="valider" name="bouton">
 		<input type="hidden" name="sub" value="1">
 	</form>
 
-	<script>tinymce.init({selector:'textarea', plugins : "emoticons", toolbar : "emoticons"});</script>
-	<?php if (isset($form_error_msg)) { echo $form_error_msg; } ?>
+	<!--<script>tinymce.init({selector:'textarea', plugins : "emoticons", toolbar : "emoticons"});</script>-->
+	<!--<?php if (isset($form_error_msg)) { echo $form_error_msg; } ?>-->
 	
 <?php
 	require_once("footer_html.php");
